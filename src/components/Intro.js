@@ -2,9 +2,8 @@ import React from 'react';
 
 class Intro extends React.Component {
     render() {
-        return ( <
-            p > Welcome to my new app < /p>
-
+        return ( 
+            <p >{this.props.takeDescriptionIntro}</p>
         )
     }
 }

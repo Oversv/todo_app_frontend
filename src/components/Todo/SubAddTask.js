@@ -1,6 +1,6 @@
 import React from 'react';
 
-class S_Add_task extends React.Component{
+class SubAddTask extends React.Component{
     render(){
         return(            
         <div className="row align-items-center">
@@ -16,4 +16,4 @@ class S_Add_task extends React.Component{
     }
 }
 
-export default S_Add_task;
+export default SubAddTask;

@@ -1,6 +1,6 @@
 import React from 'react';
 
-class S_Task extends React.Component{
+class SubTask extends React.Component{
  
 
     render(){
@@ -29,4 +29,4 @@ class S_Task extends React.Component{
     }
 }
 
-export default S_Task;
+export default SubTask;

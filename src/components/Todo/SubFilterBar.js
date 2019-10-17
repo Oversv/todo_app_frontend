@@ -1,6 +1,6 @@
 import React from 'react';
 
-class S_Filter_bar extends React.Component{
+class SubFilterBar extends React.Component{
     render(){
 
         return(            
@@ -14,4 +14,4 @@ class S_Filter_bar extends React.Component{
     }
 }
 
-export default S_Filter_bar;
+export default SubFilterBar;

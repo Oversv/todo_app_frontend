@@ -1,7 +1,6 @@
 import React from 'react';
-//import S_Task from './S_Task';
 
-class S_Status_bar extends React.Component{
+class SubStatusBar extends React.Component{
     render(){
         return(            
             <div className="row m-3">
@@ -13,4 +12,4 @@ class S_Status_bar extends React.Component{
     }
 }
 
-export default S_Status_bar ;
+export default SubStatusBar ;

@@ -37,7 +37,7 @@ class SubAddTask extends React.Component{
                 />
             </div>
             <div className="col-2">
-                <i className="fas fa-plus-circle fa-2x d-md-none pointer"></i>
+                <i className="fas fa-plus-circle fa-2x d-md-none pointer" onClick={this.addTask}></i>
                 <input type="button" className="btn btn-primary btn-sm d-none d-none d-md-block" value="ADD"
                 onClick={this.addTask}
                 />

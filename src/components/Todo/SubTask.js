@@ -17,8 +17,7 @@ class SubTask extends React.Component{
                     <button className={"circle pointer " + circleState}></button>
                 </div>
                 <div className="col-9">
-                    <p className={"m-0 p-1 task " + taskCompleted}>{this.props.task.taskDescription}</p>
-                    
+                    <p className={"m-0 p-1 task " + taskCompleted}>{this.props.task.taskDescription}</p>                    
                 </div>
                 <div className="col-2 p-0">
                     <i className="fas fa-trash-alt fa-lg d-block d-md-none"></i>

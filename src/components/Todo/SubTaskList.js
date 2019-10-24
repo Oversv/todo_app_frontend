@@ -8,10 +8,11 @@ class SubTaskList extends React.Component{
                 {this.props.tasks.map(function(task, index){
                    
                     return <SubTask task={task} key={index}/>
+                    
                 })}
             </div>
         )
     }
 }
 
-export default SubTaskList ;
+export default SubTaskList;

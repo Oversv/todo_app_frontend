@@ -8,7 +8,12 @@ class SubFilterBar extends React.Component{
                 <input type="button" className="btn btn-primary btn-sm" value="Pending"/>
                 <input type="button" className="btn btn-primary btn-sm" value="Completed"/>
                 <input type="button" className="btn btn-primary btn-sm" value="All"/>
-                <input type="button" className="btn btn-primary btn-sm" value="Delete All"/>
+                <input 
+                    type="button" 
+                    className="btn btn-primary btn-sm" 
+                    value="Delete All"
+                    onClick={this.props.deleteAll}
+                    />
             </div>
         )
     }

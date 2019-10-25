@@ -5,10 +5,12 @@ class SubTaskList extends React.Component{
     render(){
         return(            
             <div>
-                {this.props.tasks.map(function(task, index){
-                   
-                    return <SubTask task={task} key={index}/>
-                    
+                {this.props.tasks.map((element, index) =>{               
+                    return <SubTask 
+                        task={element}                                                 
+                        key={index} 
+                        deleteTask={this.props.deleteTask}
+                    />                    
                 })}
             </div>
         )

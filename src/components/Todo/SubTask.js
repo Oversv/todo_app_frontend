@@ -14,14 +14,18 @@ class SubTask extends React.Component{
         return(            
             <div className="row align-items-center mt-2 mb-2">
                 <div className="col-1 p-0 d-flex justify-content-end">
-                    <button className={"circle pointer " + circleState}></button>
+                    <button className={"circle " + circleState}></button>
                 </div>
                 <div className="col-9">
                     <p className={"m-0 p-1 task " + taskCompleted}>{this.props.task.taskDescription}</p>                    
                 </div>
                 <div className="col-2 p-0">
-                    <i className="fas fa-trash-alt fa-lg d-block d-md-none"></i>
-                    <input type="button" className="btn btn-primary btn-sm d-none d-md-block" value="Delete"/>
+                    <i className="fas fa-trash-alt fa-lg d-block d-md-none pointer" 
+                     onClick={this.props.deleteTask.bind(this, this.props.task.id)}></i>
+
+                    <input type="button" className="btn btn-primary btn-sm d-none d-md-block" value="Delete"
+                    onClick={this.props.deleteTask.bind(this, this.props.task.id)}
+                    />
                 </div>
             </div>        
         )

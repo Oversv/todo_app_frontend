@@ -10,6 +10,7 @@ class SubTaskList extends React.Component{
                         task={element}                                                 
                         key={index} 
                         deleteTask={this.props.deleteTask}
+                        updateTask ={this.props.updateTask}
                     />                    
                 })}
             </div>

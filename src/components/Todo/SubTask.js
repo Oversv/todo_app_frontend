@@ -2,19 +2,22 @@ import React from 'react';
 
 class SubTask extends React.Component{ 
 
-    render(){
+    render(){ 
         let circleState = "red";
-        let taskCompleted = null;   
+        let taskCompleted = null; 
 
-        if(this.props.task.done === true){
+        if(this.props.task.done){
             circleState="green";
             taskCompleted = "task-completed";
-        }
+        }    
 
-        return(            
+        return(      
             <div className="row align-items-center mt-2 mb-2">
                 <div className="col-1 p-0 d-flex justify-content-end">
-                    <button className={"circle " + circleState}></button>
+                    <button 
+                        className={"circle " + circleState}
+                        onClick={this.props.updateTask.bind(this, this.props.task.id)}
+                        ></button>
                 </div>
                 <div className="col-9">
                     <p className={"m-0 p-1 task " + taskCompleted}>{this.props.task.taskDescription}</p>                    

@@ -5,9 +5,24 @@ class SubFilterBar extends React.Component{
 
         return(            
             <div className="row d-flex justify-content-center">
-                <input type="button" className="btn btn-primary btn-sm" value="Pending"/>
-                <input type="button" className="btn btn-primary btn-sm" value="Completed"/>
-                <input type="button" className="btn btn-primary btn-sm" value="All"/>
+                <input 
+                    type="button" 
+                    className="btn btn-primary btn-sm" 
+                    value="Pending"
+                    onClick={this.props.pendingTasks}
+                    />
+                <input 
+                    type="button" 
+                    className="btn btn-primary btn-sm" 
+                    value="Completed"
+                    onClick={this.props.completedTasks}
+                    />
+                <input 
+                    type="button" 
+                    className="btn btn-primary btn-sm" 
+                    value="All"
+                    onClick={this.props.allTasks}
+                    />
                 <input 
                     type="button" 
                     className="btn btn-primary btn-sm" 

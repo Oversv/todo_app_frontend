@@ -55,7 +55,7 @@ class Todo extends React.Component {
             return element;
         })
         
-        this.setState({tasks});     
+        this.setState({tasks: tasks});     
        
     };
 

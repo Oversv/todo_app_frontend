@@ -30,6 +30,7 @@
 .task {
   height: 100%;
   background-color: lightsteelblue;
+  border-radius: 0.2rem;
 }
 
 .task-completed {
@@ -39,6 +40,15 @@
 .btn {
   width: 100px;
   margin: 6px;
+}
+
+.reset-btn{
+  width: 32px;
+  height: 32px;
+  padding: 0;  
+  border: none;
+  border-radius: 50%;
+  background: none;    
 }
 
 .pointer {

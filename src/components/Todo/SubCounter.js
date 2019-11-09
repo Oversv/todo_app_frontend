@@ -20,7 +20,7 @@ class SubCounter extends React.Component{
         return(            
             <div className="row m-3">
                 <div className="col-12">
-                    <p className="m-0 p-1">{text}</p>
+                    <h2 className="m-0 p-3 h2">{text}</h2>
                 </div>
             </div>
         )

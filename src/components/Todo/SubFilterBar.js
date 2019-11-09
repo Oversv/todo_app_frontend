@@ -4,7 +4,7 @@ class SubFilterBar extends React.Component{
     render(){
 
         return(            
-            <div className="row d-flex justify-content-center">
+            <div className="row d-flex p-3 justify-content-center">
                 <input 
                     type="button" 
                     className="btn btn-primary btn-sm" 

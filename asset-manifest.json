@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/todo_app_frontend/static/css/main.b6117d94.chunk.css",
+    "main.css": "/todo_app_frontend/static/css/main.b96e6827.chunk.css",
     "main.js": "/todo_app_frontend/static/js/main.dd7e650a.chunk.js",
     "main.js.map": "/todo_app_frontend/static/js/main.dd7e650a.chunk.js.map",
     "runtime-main.js": "/todo_app_frontend/static/js/runtime-main.055414d6.js",
@@ -8,15 +8,15 @@
     "static/js/2.8db9aff1.chunk.js": "/todo_app_frontend/static/js/2.8db9aff1.chunk.js",
     "static/js/2.8db9aff1.chunk.js.map": "/todo_app_frontend/static/js/2.8db9aff1.chunk.js.map",
     "index.html": "/todo_app_frontend/index.html",
-    "precache-manifest.9620328b5e5858542eb165221180ecab.js": "/todo_app_frontend/precache-manifest.9620328b5e5858542eb165221180ecab.js",
+    "precache-manifest.d82aec8e01526f7aae8e54cf4aef20d2.js": "/todo_app_frontend/precache-manifest.d82aec8e01526f7aae8e54cf4aef20d2.js",
     "service-worker.js": "/todo_app_frontend/service-worker.js",
-    "static/css/main.b6117d94.chunk.css.map": "/todo_app_frontend/static/css/main.b6117d94.chunk.css.map",
+    "static/css/main.b96e6827.chunk.css.map": "/todo_app_frontend/static/css/main.b96e6827.chunk.css.map",
     "static/media/index.css": "/todo_app_frontend/static/media/posits2.a887144b.jpg"
   },
   "entrypoints": [
     "static/js/runtime-main.055414d6.js",
     "static/js/2.8db9aff1.chunk.js",
-    "static/css/main.b6117d94.chunk.css",
+    "static/css/main.b96e6827.chunk.css",
     "static/js/main.dd7e650a.chunk.js"
   ]
 }

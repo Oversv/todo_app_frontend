@@ -1,23 +1,24 @@
-/*https://colorhunt.co/palette/156488*/
-
 :root{
+  /*https://colorhunt.co/palette/156488*/
   --main-color:#f8a978;
   --second-color:#fcf9ea;
-  --third-color:#badfdb;  
-  --fourth-color:#ffc5a1;  
+  --third-color : #404040;  
+  --fourth-color:hsl(23, 100%, 82%);  
 }
 
 .header-index {
-  opacity: 0.8;
-  background: var(--second-color);  
+  opacity: 0.9;
+  background: var(--main-color);
+    
   text-align: center;
   padding: 20px;
 }
-.h1{
-  opacity: 1;  
-  color: var(--main-color); 
+
+.h1{ 
+  color: var(--second-color); 
   letter-spacing: 6px;
 }
+
 .h2{
   font-size: 20px; 
   color: var(--main-color);  
@@ -25,7 +26,7 @@
 
 .main {
   margin: 20px;
-  min-height: 70vh;
+  min-height: 80vh;
 }
 
 .sizeTodo {
@@ -38,8 +39,9 @@
   border: none;
   border-bottom:var(--main-color) 2px solid;
   background-color: var(--second-color);
-  
+  color: var(--third-color);  
 }
+
 .circle {
   width: 20px;
   height: 20px;
@@ -57,14 +59,27 @@
 .task {
   height: 100%;
   background-color: var(--fourth-color);
-  color: var(--second-color);
-  font-weight: bold;
-  border-radius: 3px;
-  
+  color: var(--third-color);
+  border-radius: 3px;  
 }
 
 .task-completed {
   text-decoration-line: line-through
+}
+/*** Buttons ***/
+
+/*Reset properties of boostrap*/
+.btn.active.focus,
+.btn.active:focus,
+.btn.focus,
+.btn.focus:active,
+.btn:active:focus,
+.btn:focus {
+  outline: 0 !important;
+  outline-offset: 0  !important;
+  background-image: none  !important;
+  -webkit-box-shadow: none !important;
+  box-shadow: none  !important;
 }
 
 .btn {
@@ -72,13 +87,14 @@
   margin: 6px;
   padding: 6px;
   background: var(--main-color);
-  color: var(--second-color);
+  color: var(--third-color);
   border-color: var(--second-color);
 }
 
 .btn:hover{
   background: var(--main-color);
   border-color: var(--second-color);
+  color: var(--third-color);
   transition: all 1s;
   transform: scale(1.1);
 }
@@ -99,6 +115,7 @@
 .pointer {
   cursor: pointer;
 }
+/*** End Buttons***/
 
 .footer-index {
   background-color: var(--main-color);

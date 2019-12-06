@@ -16,7 +16,7 @@ class SubTask extends React.Component{
                 <div className="col-1 p-0 d-flex justify-content-end">
                     <button 
                         className={"circle " + circleState}
-                        onClick={this.props.updateTask.bind(this, this.props.task.id)}
+                        onClick={this.props.updateTask.bind(this, this.props.task.taskId)}
                         ></button>
                 </div>
                 <div className="col-9">
@@ -24,10 +24,10 @@ class SubTask extends React.Component{
                 </div>
                 <div className="col-2 p-0">
                     <i className="fas fa-trash-alt fa-lg d-block d-md-none pointer btn-awesome" 
-                     onClick={this.props.deleteTask.bind(this, this.props.task.id)}></i>
+                     onClick={this.props.deleteTask.bind(this, this.props.task.taskId)}></i>
 
                     <input type="button" className="btn btn-primary btn-sm d-none d-md-block p-2" value="Delete"
-                    onClick={this.props.deleteTask.bind(this, this.props.task.id)}
+                    onClick={this.props.deleteTask.bind(this, this.props.task.taskId)}
                     />
                 </div>
             </div>        

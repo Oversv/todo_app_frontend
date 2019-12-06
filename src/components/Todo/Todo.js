@@ -3,6 +3,7 @@ import SubAddTask from './SubAddTask';
 import SubCounter from './SubCounter';
 import SubFilterBar from './SubFilterBar';
 import SubTaskList from './SubTaskList';
+const axios = require ('axios');
 
 class Todo extends React.Component {
     constructor(props) {
@@ -16,22 +17,52 @@ class Todo extends React.Component {
         }       
     }
     
+    componentDidMount(){
+        axios.get('https://b40qyul4lk.execute-api.eu-west-2.amazonaws.com/dev/tasks')
+        .then((response)=> {
+
+          this.setState({tasks: response.data.task})
+          
+        })
+        .catch((error)=> {          
+          console.log(error);
+        });
+    }
+
     addTask = task =>{
-        const tasks = this.state.tasks;      
-        
-        tasks.push(task);        
-        this.setState({tasks: tasks})     
-        this.setState({pendingTasks: tasks})  
+
+        axios.post('https://b40qyul4lk.execute-api.eu-west-2.amazonaws.com/dev/tasks', task)
+        .then((response) => {
+
+
+          const tasks = this.state.tasks;          
+         // this.setState({tasks.taskId: response.data.taskId })
+          task.taskId=response.data.taskId; //Revisar si hay que hacer el setState           
+          tasks.push(task);   
+
+          this.setState({tasks: tasks})     
+          this.setState({pendingTasks: tasks})  //Revisar si quiero que se meta en este arrat
+   
+        });
     }   
 
     deleteTask = id =>{
-        const tasks = this.state.tasks.filter(element => element.id !== id);   
-        const pendingTasks = this.state.pendingTasks.filter(element => element.id !== id);   
-        const completedTasks = this.state.completedTasks.filter(element => element.id !== id);  
-       
-        this.setState({tasks: tasks});  
-        this.setState({pendingTasks: pendingTasks});  
-        this.setState({completedTasks: completedTasks});  
+        console.log(id);
+        axios.delete(`https://b40qyul4lk.execute-api.eu-west-2.amazonaws.com/dev/tasks/${id}`)
+        .then((response) => {       
+           
+            const tasks = this.state.tasks.filter(element => element.taskId !== id);   
+            const pendingTasks = this.state.pendingTasks.filter(element => element.taskId !== id);   
+            const completedTasks = this.state.completedTasks.filter(element => element.taskId !== id);  
+   
+            this.setState({tasks: tasks});
+            this.setState({pendingTasks: pendingTasks});  
+            this.setState({completedTasks: completedTasks});  
+        })
+        .catch(err => {
+            console.log("Could not delete task", err);
+          });
+
     }
 
     deleteAllTasks = () =>{        
@@ -45,17 +76,26 @@ class Todo extends React.Component {
         }          
     }
 
-    updateTask = id =>{        
-     
-        const tasks = this.state.tasks.map(element =>{   
-                     
-            if(element.id === id){
-              element.done = !element.done;
-            }   
-            return element;
-        })
+    updateTask = id =>{    
+       
+        const taskId = this.state.tasks.filter(element => element.taskId === id);   
+        let tasks = this.state.tasks;   
+
+        let data = {
+            taskDescription: taskId[0].taskDescription,
+            done: !taskId[0].done,
+            date: taskId[0].date,
+            userId: taskId[0].userId,
+        }
+        taskId[0].done = data.done;
+       
+    
+        axios.put(`https://b40qyul4lk.execute-api.eu-west-2.amazonaws.com/dev/tasks/${id}`, data)
+        .then((response) => {
+
+            this.setState({tasks: tasks})
         
-        this.setState({tasks: tasks});     
+        });   
        
     };
 

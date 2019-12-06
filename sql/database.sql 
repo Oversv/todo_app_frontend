@@ -12,6 +12,7 @@ CREATE TABLE IF NOT EXISTS task(
     taskId BIGINT(20) NOT NULL AUTO_INCREMENT, PRIMARY KEY (taskId),
     taskDescription VARCHAR(100) NOT NULL,
     done BOOLEAN NOT NULL,
+    date DATE NOT NULL,
     userId BIGINT(20), 
     CONSTRAINT fk_user FOREIGN KEY (userId) REFERENCES user(userId)
 );
@@ -22,7 +23,7 @@ CREATE TABLE IF NOT EXISTS task(
 INSERT INTO user VALUES (NULL, 'Alberto');
 INSERT INTO user VALUES (NULL, 'Alicia');
 
-INSERT INTO task VALUES (NULL, 'Buy milk', TRUE, 1);
-INSERT INTO task VALUES (NULL, 'Go running', FALSE, 2);
+INSERT INTO task VALUES (NULL, 'Buy milk', TRUE, '2019-11-10', 1);
+INSERT INTO task VALUES (NULL, 'Go running', FALSE, '2019-11-12', 2);
 INSERT INTO task VALUES (NULL, 'Go shoping', 1, 2);
 INSERT INTO task VALUES (NULL, 'Do homework', 0, 1);

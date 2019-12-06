@@ -4,17 +4,22 @@ import uuid from "uuid/v4";
 class SubAddTask extends React.Component{
   
     state ={  
-        id: "",  
+        taskId: "",  
         taskDescription: "",
-        done: false
+        done: false,
+        date:"2019-10-10",
+        userId:1
     }   
 
     handleAddTask = () =>{           
         const task = {  
-            id: uuid(),        
+            //taskId: this.state.taskId,
+            //taskId: uuid(),              
             taskDescription: this.state.taskDescription,         
-            done: false 
-        }
+            done: this.state.done,
+            date: this.state.date,
+            userId: this.state.userId
+        }      
      
         this.props.newTask(task); 
         this.setState({taskDescription: ""});     
@@ -32,10 +37,10 @@ class SubAddTask extends React.Component{
         <div className="row align-items-center">
             <div className="col-10">
                 <input 
-                    type="text" newTask
+                    type="text" 
                     className="input-group input-addTask p-2" 
                     id="addTask" 
-                    autocomplete = "off"
+                    autoComplete = "off"
                     placeholder="Add your task here"
                     value={this.state.taskDescription}
                     onChange={this.takeDescriptionChanged}                

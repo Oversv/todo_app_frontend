@@ -34,14 +34,13 @@ class Todo extends React.Component {
         axios.post('https://b40qyul4lk.execute-api.eu-west-2.amazonaws.com/dev/tasks', task)
         .then((response) => {
 
-
           const tasks = this.state.tasks;          
          // this.setState({tasks.taskId: response.data.taskId })
-          task.taskId=response.data.taskId; //Revisar si hay que hacer el setState           
+          task.taskId=response.data.taskId; //Not a good code :-S           
           tasks.push(task);   
 
           this.setState({tasks: tasks})     
-          this.setState({pendingTasks: tasks})  //Revisar si quiero que se meta en este arrat
+          this.setState({pendingTasks: tasks})
    
         });
     }   
@@ -94,8 +93,7 @@ class Todo extends React.Component {
             date: taskId[0].date,
             userId: taskId[0].userId,
         }
-        taskId[0].done = data.done;
-       
+        taskId[0].done = data.done;       
     
         axios.put(`https://b40qyul4lk.execute-api.eu-west-2.amazonaws.com/dev/tasks/${id}`, data)
         .then((response) => {
@@ -120,8 +118,7 @@ class Todo extends React.Component {
         this.setState({render: 'completed'});   
     }
     
-    allTasks = () =>{
-        
+    allTasks = () =>{        
         const tasks = this.state.tasks.filter(element => element); 
       
         this.setState({tasks: tasks});  

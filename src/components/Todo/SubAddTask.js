@@ -1,13 +1,14 @@
 import React from 'react';
-import uuid from "uuid/v4";
+const moment = require('moment');
+//import uuid from "uuid/v4";
 
 class SubAddTask extends React.Component{
-  
+
     state ={  
         taskId: "",  
         taskDescription: "",
         done: false,
-        date:"2019-10-10",
+        date: moment(new Date()).format("YYYY-MM-DD"),
         userId:1
     }   
 
@@ -20,7 +21,7 @@ class SubAddTask extends React.Component{
             date: this.state.date,
             userId: this.state.userId
         }      
-     
+        
         this.props.newTask(task); 
         this.setState({taskDescription: ""});     
     }

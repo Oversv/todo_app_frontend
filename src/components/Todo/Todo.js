@@ -47,7 +47,7 @@ class Todo extends React.Component {
     }   
 
     deleteTask = id =>{
-        console.log(id);
+      
         axios.delete(`https://b40qyul4lk.execute-api.eu-west-2.amazonaws.com/dev/tasks/${id}`)
         .then((response) => {       
            
@@ -70,9 +70,16 @@ class Todo extends React.Component {
         let deleteAll = window.confirm('Do you want to delete all tasks?');
 
         if(deleteAll) {
-            this.setState({tasks: tasks});
-            this.setState({pendingTasks: tasks});  
-            this.setState({completedTasks: tasks});  
+            
+            axios.post('https://b40qyul4lk.execute-api.eu-west-2.amazonaws.com/dev/deleteAll')
+
+            .then((response) => {
+
+                this.setState({tasks: tasks});
+                this.setState({pendingTasks: tasks});  
+                this.setState({completedTasks: tasks}); 
+
+            });
         }          
     }
 
@@ -114,6 +121,7 @@ class Todo extends React.Component {
     }
     
     allTasks = () =>{
+        
         const tasks = this.state.tasks.filter(element => element); 
       
         this.setState({tasks: tasks});  
